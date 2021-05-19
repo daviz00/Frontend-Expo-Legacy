@@ -19,9 +19,9 @@ const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 const AddRoomButton = ({ children, onPress }) => (
 
   <Pressable
-onPress={() => Vibration.vibrate(50)}
+    onPress={() => Vibration.vibrate(50)}
     style={{
-      top: -25,
+      top: -30,
       justifyContent: 'center',
       alignItems: 'center',
     }}
@@ -53,6 +53,14 @@ export default function BottomTabNavigator() {
         tabBarOptions={{
           activeTintColor: Colors[colorScheme].tint,
           showLabel: false,
+          style: {
+            position: 'absolute',
+            height: 60,
+            backgroundColor: '#ffffff',
+            paddingHorizontal: 20,
+            elevation: 0,
+          },
+
         }}
       >
       <BottomTab.Screen

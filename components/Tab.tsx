@@ -23,7 +23,7 @@ const Background = styled(Transitioning.View)`
   justify-content: center;
   background: ${(props) => (props.focused ? bgColors[props.label] : '#F2F2F2')};
   border-radius: 100px;
-  margin: 6px;
+  margin: 8px;
 `;
 const Icon = styled.Image`
   height: 24px;
