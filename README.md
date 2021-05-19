@@ -21,11 +21,12 @@ tabs (TypeScript)     several example screens and tabs using react-navigation an
 11. expo-linear-gradient
 12. @freakycoder/react-native-bounceable
 13. react-native-androw
-14. react-native-apple-header
-15. react-native-vector-icons (already included with expo - ignore UNMET_PEER_DEPENDENCY Prompt)
-16. styled-components
-17. react-native-modal
-18. react-native-redash
+14. react-native-paper
+15. react-native-apple-header
+16. react-native-vector-icons (already included with expo - ignore UNMET_PEER_DEPENDENCY Prompt)
+17. styled-components
+18. react-native-modal
+19. react-native-redash
 
 ## Options
 
