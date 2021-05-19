@@ -96,7 +96,8 @@ const styles = StyleSheet.create({
     elevation: 4,
   },
   titleStyle: {
-    marginVertical: 10,
+    marginVertical: 15,
+    marginHorizontal: 20,
     fontSize: 20,
     lineHeight: 26,
     fontWeight: 'bold',
