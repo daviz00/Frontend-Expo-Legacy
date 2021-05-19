@@ -1,8 +1,8 @@
 import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import * as React from 'react';
-import { View, StyleSheet, Image, Pressable, Vibration } from "react-native";
+import React, { useCallback, useMemo, useRef, useState } from 'react';
+import { StyleSheet, Image, Pressable, Vibration } from "react-native";
 
 import { LinearGradient } from 'expo-linear-gradient';
 import Colors from '../constants/Colors';
@@ -12,14 +12,80 @@ import ProfileScreen from '../screens/ProfileScreen';
 import { BottomTabParamList, HomeParamList, ProfileParamList } from '../types';
 import TabComponent from '../components/Tab';
 
+// started
+
+import { BottomSheetModal, BottomSheetView } from '@gorhom/bottom-sheet';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Button, Text } from 'react-native-paper';
+import withModalProvider from '../components/BottomSheet/ModalProvider';
+
+
+// end
+
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
-const AddRoomButton = ({ children, onPress }) => (
+const AddRoomButton = ({ children, onPress }) => {
+
+  // start
+
+  // state
+  const [count, setCount] = useState(0);
+  const [contentHeight, setContentHeight] = useState(0);
+
+  // hooks
+  const bottomSheetRef = useRef<BottomSheetModal>(null);
+  const { bottom: safeBottomArea } = useSafeAreaInsets();
+
+  // variables
+  const snapPoints = useMemo(() => [contentHeight], [contentHeight]);
+
+  // callbacks
+  const handleIncreaseContentPress = useCallback(() => {
+    setCount(state => state + 1);
+  }, []);
+  const handleDecreaseContentPress = useCallback(() => {
+    setCount(state => Math.max(state - 1, 0));
+  }, []);
+
+  const handlePresentPress = useCallback(() => {
+    bottomSheetRef.current?.present();
+  }, []);
+  const handleDismissPress = useCallback(() => {
+    bottomSheetRef.current?.dismiss();
+  }, []);
+  const handleOnLayout = useCallback(
+    ({
+      nativeEvent: {
+        layout: { height },
+      },
+    }) => {
+      setContentHeight(height);
+    },
+    []
+  );
+
+  // styles
+  const contentContainerStyle = useMemo(
+    () => ({
+      ...styles.contentContainerStyle,
+      paddingBottom: safeBottomArea,
+    }),
+    [safeBottomArea]
+  );
+  const emojiContainerStyle = useMemo(
+    () => ({
+      ...styles.emojiContainer,
+      height: 50 * count,
+    }),
+    [count]
+  );
+
+  // end
 
   <Pressable
-    onPress={() => Vibration.vibrate(50)}
+    onPress={handlePresentPress}
     style={{
       top: -30,
       justifyContent: 'center',
@@ -40,13 +106,30 @@ const AddRoomButton = ({ children, onPress }) => (
       {children}
     </LinearGradient>
   </Pressable>
-);
+};
 
 export default function BottomTabNavigator() {
   const colorScheme = useColorScheme();
 
   return (
     <SafeAreaProvider>
+
+    <BottomSheetModal ref={bottomSheetRef} snapPoints={snapPoints}>
+        <BottomSheetView
+          style={contentContainerStyle}
+          onLayout={handleOnLayout}
+        >
+          <Text style={styles.message}>
+            Could this sheet modal resize to its content height ?
+          </Text>
+          <View style={emojiContainerStyle}>
+            <Text style={styles.emoji}>😍</Text>
+          </View>
+          <Button label="Yes" onPress={handleIncreaseContentPress} />
+          <Button label="Maybe" onPress={handleDecreaseContentPress} />
+        </BottomSheetView>
+      </BottomSheetModal>
+
     <BottomTab.Navigator
         initialRouteName="Home"
         showLabel='false'
@@ -144,3 +227,29 @@ function ProfileNavigator() {
     </ProfileStack.Navigator>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 24,
+  },
+  contentContainerStyle: {
+    paddingTop: 12,
+    paddingHorizontal: 24,
+    backgroundColor: 'white',
+  },
+  message: {
+    fontSize: 24,
+    fontWeight: '600',
+    marginBottom: 12,
+  },
+  emoji: {
+    fontSize: 156,
+    textAlign: 'center',
+    alignSelf: 'center',
+  },
+  emojiContainer: {
+    overflow: 'hidden',
+    justifyContent: 'center',
+  },
+});
