@@ -7,7 +7,7 @@ import {
   Image,
   Animated,
 } from 'react-native';
-import EnterRoomButton from './EnterRoomButton';
+import EnterRoomButton from '../Buttons/EnterRoomButton';
 import {Card} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
 import Row from './Row';
