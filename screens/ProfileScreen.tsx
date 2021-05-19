@@ -26,7 +26,7 @@ return (
                 'https://pbs.twimg.com/profile_images/1334955566993604608/vo4Ep1TZ_400x400.jpg',
                 }}
                 style={styles.image}
-                resizeMode="center"></Image>
+                resizeMode="center"/>
         </View>
         </View>
 
@@ -109,6 +109,7 @@ image: {
     flex: 1,
     height: undefined,
     width: undefined,
+    borderWidth: 3,
 },
 
 subText: {
@@ -123,7 +124,6 @@ profileImage: {
     borderRadius: 15,
     overflow: 'hidden',
     marginTop: 10,
-    elevation: 8,
 },
 
 infoContainer: {
