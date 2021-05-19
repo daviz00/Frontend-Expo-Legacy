@@ -2,7 +2,7 @@ import * as React from 'react';
 import { View as DefaultView } from 'react-native';
 
 import { Text as DefaultText } from 'react-native-elements';
-import { ThemeProvider } from 'react-native-elements';
+import { ThemeProvider } from 'react-native-paper';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
