@@ -10,11 +10,18 @@ import {
 
 import { AntDesign } from '@expo/vector-icons';
 import { Card, Button } from 'react-native-elements'
+import {useNavigation} from '@react-navigation/native';
 
 import FollowButton from '../components/Buttons/FollowButton';
 
 
 export default function ProfileScreen() {
+
+    const {navigate, goBack} = useNavigation();
+  const submitHandler = () => {
+    navigate('Home');
+  };
+
 return (
     <SafeAreaView style={styles.container}>
     <ScrollView showsVerticalScrollIndicator={false}>
@@ -56,7 +63,7 @@ return (
             <Text style={[styles.text, styles.subText]}>Following</Text>
             </View>
             </View>
-            <FollowButton />
+            <FollowButton onPress={submitHandler} text="Follow"/>
             <View style={styles.infoContainer}>
             <Text
                 style={[ styles.text,

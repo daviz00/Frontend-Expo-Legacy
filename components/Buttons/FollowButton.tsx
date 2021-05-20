@@ -3,16 +3,17 @@ import {StyleSheet, View} from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import {Button} from 'react-native-paper';
 
-const FollowButton = () => {
+const FollowButton = ({onPress, text}) => {
   return (
       <View style={styles.btnView}>
         <Button
           mode="contained"
           labelStyle={styles.labelStyle}
           color="#FF9E01"
+          onPress={onPress}
           icon="account-plus"
           style={styles.btn}>
-          Follow
+          {text}
         </Button>
       </View>
     );
