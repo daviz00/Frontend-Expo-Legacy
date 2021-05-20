@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     color: '#E9E9E9',
     lineHeight: 26,
     fontWeight: 'bold',
-    textAlign: 'center',
+    textAlign: 'left',
   },
   countView: {
     justifyContent: 'center',
