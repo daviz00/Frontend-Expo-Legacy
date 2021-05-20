@@ -9,7 +9,7 @@ const FollowButton = () => {
         <Button
           mode="contained"
           labelStyle={styles.labelStyle}
-          color="#71A1FF"
+          color="#FF9E01"
           icon="account-plus"
           style={styles.btn}>
           Follow
@@ -36,7 +36,8 @@ const styles = StyleSheet.create({
     paddingVertical: 3,
     justifyContent: 'center',
     alignItems: 'center',
-    color: 'white',
+    color: '#000',
+    fontWeight: 'bold',
     textTransform: 'capitalize',
     minHeight: 24,
   },

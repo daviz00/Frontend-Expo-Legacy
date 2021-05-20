@@ -12,6 +12,7 @@ const EnterRoomButton = ({onPress, text, sending = false}) => {
         labelStyle={styles.labelStyle}
         disabled={sending}
         icon="access-point"
+        color="#FF9E01"
         style={styles.btn}>
         {text}
       </Button>
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
     paddingVertical: 4,
     justifyContent: 'center',
     alignItems: 'center',
-    color: '#FF9E01',
+    fontWeight: 'bold',
     textTransform: 'capitalize',
     minHeight: 24,
   },
