@@ -27,7 +27,8 @@ const AddRoomButton = ({ children, onPress }) => (
     }}
   >
     <LinearGradient
-      colors={['#d00000', '#3a0ca3']}
+      // colors={['#d00000', '#3a0ca3']}
+      colors={['#FF9905', '#FB5D36']}
       style={{
         width: 60,
         height: 60,
@@ -58,6 +59,7 @@ export default function BottomTabNavigator() {
             height: 60,
             backgroundColor: 'black',
             paddingHorizontal: 20,
+            borderTopWidth: 0,
             elevation: 0,
           },
 
@@ -82,7 +84,7 @@ export default function BottomTabNavigator() {
               style={{
                 width: 30,
                 height: 30,
-                tintColor: 'white'
+                tintColor: 'black'
               }}
             />),
           tabBarButton: (props) => (
