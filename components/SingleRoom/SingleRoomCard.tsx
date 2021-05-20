@@ -97,7 +97,9 @@ const styles = StyleSheet.create({
     // alignItems: 'center',
     backgroundColor: '#201C19',
     borderRadius: 24,
-    elevation: 4,
+    elevation: 15,
+    borderWidth: 2,
+    borderColor: '#000814',
   },
   titleStyle: {
     marginVertical: 15,
