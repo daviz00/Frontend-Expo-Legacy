@@ -18,7 +18,7 @@ const {height, width} = Dimensions.get('screen');
 const SingleRoomCard = ({name, source, isFirst, swipe, tiltSign, ...rest}) => {
   const {navigate, goBack} = useNavigation();
   const submitHandler = () => {
-    navigate('Room');
+    navigate('Profile');
   };
   return (
     <Card style={styles.cardContainer}>
@@ -35,6 +35,7 @@ const SingleRoomCard = ({name, source, isFirst, swipe, tiltSign, ...rest}) => {
           style={{
             marginRight: 10,
             fontSize: 15,
+            color: '#E9E9E9',
           }}>
           420
         </Text>
@@ -42,6 +43,7 @@ const SingleRoomCard = ({name, source, isFirst, swipe, tiltSign, ...rest}) => {
           style={{
             marginRight: 10,
             fontSize: 15,
+            color: '#E9E9E9',
           }}>
           |
         </Text>
@@ -52,6 +54,7 @@ const SingleRoomCard = ({name, source, isFirst, swipe, tiltSign, ...rest}) => {
           style={{
             marginRight: 10,
             fontSize: 15,
+            color: '#E9E9E9',
           }}>
           69
         </Text>
@@ -92,6 +95,7 @@ const styles = StyleSheet.create({
     height: height / 1.64,
     width: width / 1.17,
     // alignItems: 'center',
+    backgroundColor: '#201C19',
     borderRadius: 24,
     elevation: 4,
   },
@@ -99,6 +103,7 @@ const styles = StyleSheet.create({
     marginVertical: 15,
     marginHorizontal: 20,
     fontSize: 20,
+    color: '#E9E9E9',
     lineHeight: 26,
     fontWeight: 'bold',
     textAlign: 'center',
@@ -112,8 +117,8 @@ const styles = StyleSheet.create({
     width: 90,
     height: 90,
     borderRadius: 50,
-    borderWidth: 2,
-    borderColor: '#2B32B2',
+    borderWidth: 1,
+    borderColor: '#d90429',
     marginTop: 20,
 
   },

@@ -32,14 +32,14 @@ const styles = StyleSheet.create({
   btn: {
     borderRadius: 30,
     borderWidth: 3,
-    borderColor: '#71A1FF',
+    borderColor: '#FF9E01',
   },
   labelStyle: {
     fontSize: 18,
     paddingVertical: 4,
     justifyContent: 'center',
     alignItems: 'center',
-    color: '#71A1FF',
+    color: '#FF9E01',
     textTransform: 'capitalize',
     minHeight: 24,
   },

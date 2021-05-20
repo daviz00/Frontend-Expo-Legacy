@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
     paddingTop: 60,
     paddingHorizontal: 30,
     alignItems: 'center',
+    backgroundColor: '#13120E',
   },
   roomCard: {
     marginVertical: 20,
@@ -30,5 +31,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginRight: 195,
     marginBottom: 60,
+    color: '#E9E9E9'
   },
 });

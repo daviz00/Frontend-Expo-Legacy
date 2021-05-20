@@ -27,15 +27,15 @@ const AddRoomButton = ({ children, onPress }) => (
     }}
   >
     <LinearGradient
-      colors={['#71A1FF', '#2B32B2']}
+      colors={['#d00000', '#3a0ca3']}
       style={{
         width: 60,
         height: 60,
         borderRadius: 35,
         elevation: 12,
         overflow: 'visible',
-        borderWidth: 0.5,
-        borderColor: '#71A1FF'
+        borderWidth: 0,
+        borderColor: '#000000'
       }}>
       {children}
     </LinearGradient>
@@ -56,7 +56,7 @@ export default function BottomTabNavigator() {
           style: {
             position: 'absolute',
             height: 60,
-            backgroundColor: '#ffffff',
+            backgroundColor: 'black',
             paddingHorizontal: 20,
             elevation: 0,
           },

@@ -5,13 +5,13 @@ import { Transition, Transitioning } from 'react-native-reanimated';
 import Images from '../assets/images';
 
 const bgColors = {
-  home: '#D6E4FF',
-  profile: '#D6E4FF',
+  home: '#2A1E0E',
+  profile: '#2A1E0E',
 };
 
 const textColors = {
-  home: '#71A1FF',
-  profile: '#71A1FF',
+  home: '#FF9E01',
+  profile: '#FF9E01',
 };
 
 const Container = styled.TouchableWithoutFeedback``;
@@ -21,7 +21,7 @@ const Background = styled(Transitioning.View)`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background: ${(props) => (props.focused ? bgColors[props.label] : '#F2F2F2')};
+  background: ${(props) => (props.focused ? bgColors[props.label] : '#13120E')};
   border-radius: 100px;
   margin: 8px;
 `;
