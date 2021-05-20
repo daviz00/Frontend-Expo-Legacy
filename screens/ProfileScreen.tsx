@@ -61,7 +61,8 @@ return (
             <Text
                 style={[ styles.text,
                         {
-                        color: '#1A1A1A',
+                        // color: '#1A1A1A',
+                        color: '#E9E9E9',
                         fontSize: 14,
                         textAlign: 'center',
                         lineHeight: 22,
@@ -95,7 +96,7 @@ container: {
     paddingTop: 60,
     paddingHorizontal: 30,
     alignItems: 'center',
-    backgroundColor: '#FAFAFA',
+    backgroundColor: '#13120E',
 },
 headContainer: {
     marginVertical: 20,
@@ -103,7 +104,8 @@ headContainer: {
     // height:200,
 },
 text: {
-    color: '#52575D',
+    // color: '#52575D',
+    color: '#FFFFFF'
 },
 image: {
     flex: 1,
