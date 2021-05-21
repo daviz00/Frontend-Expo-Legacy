@@ -1,113 +1,117 @@
-import { Ionicons } from '@expo/vector-icons';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createStackNavigator } from '@react-navigation/stack';
-import * as React from 'react';
+import { Ionicons } from "@expo/vector-icons";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createStackNavigator } from "@react-navigation/stack";
+import * as React from "react";
 import { View, StyleSheet, Image, Pressable, Vibration } from "react-native";
 
-import { LinearGradient } from 'expo-linear-gradient';
-import Colors from '../constants/Colors';
-import useColorScheme from '../hooks/useColorScheme';
-import HomeScreen from '../screens/HomeScreen';
-import ProfileScreen from '../screens/ProfileScreen';
-import { BottomTabParamList, HomeParamList, ProfileParamList } from '../types';
-import TabComponent from '../components/Tab';
+import { LinearGradient } from "expo-linear-gradient";
+import Colors from "../constants/Colors";
+import useColorScheme from "../hooks/useColorScheme";
+import HomeScreen from "../screens/HomeScreen";
+import ProfileScreen from "../screens/ProfileScreen";
+import { BottomTabParamList, HomeParamList, ProfileParamList } from "../types";
+import TabComponent from "../components/Tab";
 
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import Trial from "../screens/NewRoom";
+import { useNavigation } from "@react-navigation/native";
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
-const AddRoomButton = ({ children, onPress }) => (
-
+const AddRoomButton = ({ children, onPress }) => {
+  const navigation = useNavigation()
+  return(
   <Pressable
-    onPress={() => Vibration.vibrate(50)}
+    onPress={() => navigation.navigate('Room')}
     style={{
       top: -30,
-      justifyContent: 'center',
-      alignItems: 'center',
+      justifyContent: "center",
+      alignItems: "center",
     }}
   >
     <LinearGradient
       // colors={['#d00000', '#3a0ca3']}
-      colors={['#FF9905', '#FB5D36']}
+      colors={["#FF9905", "#FB5D36"]}
       style={{
         width: 60,
         height: 60,
         borderRadius: 35,
         elevation: 12,
-        overflow: 'visible',
+        overflow: "visible",
         borderWidth: 0,
-        borderColor: '#000000'
-      }}>
+        borderColor: "#000000",
+      }}
+    >
       {children}
     </LinearGradient>
   </Pressable>
-);
+)};
 
 export default function BottomTabNavigator() {
   const colorScheme = useColorScheme();
 
   return (
     <SafeAreaProvider>
-    <BottomTab.Navigator
+      <BottomTab.Navigator
         initialRouteName="Home"
-        showLabel='false'
+        showLabel="false"
         tabBarOptions={{
           activeTintColor: Colors[colorScheme].tint,
           showLabel: false,
           style: {
-            position: 'absolute',
+            position: "absolute",
             height: 60,
-            backgroundColor: 'black',
+            backgroundColor: "black",
             paddingHorizontal: 20,
             borderTopWidth: 0,
             elevation: 0,
           },
-
         }}
       >
-      <BottomTab.Screen
-        name="Home"
+        <BottomTab.Screen
+          name="Home"
           component={HomeNavigator}
-        options={{
-          tabBarButton: (props) => <TabComponent label="home" {...props} />,
-        }}
+          options={{
+            tabBarButton: (props) => <TabComponent label="home" {...props} />,
+          }}
         />
         <BottomTab.Screen
-        name="Room"
-          // component={HomeNavigator}
-        component={AddRoomButton}
-        options={{
-          tabBarIcon: ({ focused }) => (
-            <Image
-              source={require('../assets/images/plus.png')}
-              resizeMode="contain"
-              style={{
-                width: 30,
-                height: 30,
-                tintColor: 'black'
-              }}
-            />),
-          tabBarButton: (props) => (
-            <AddRoomButton { ... props } />
-          )
-        }}
-      />
-      <BottomTab.Screen
-        name="Profile"
-        component={ProfileNavigator}
-        options={{
-          tabBarButton: (props) => <TabComponent label="profile" {...props} />,
-
-        }}
-      />
+          name="Room"
+          component={Trial}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <Image
+                source={require("../assets/images/plus.png")}
+                resizeMode="contain"
+                style={{
+                  width: 30,
+                  height: 30,
+                  tintColor: "black",
+                }}
+              />
+            ),
+            tabBarButton: (props) => <AddRoomButton {...props} />,
+          }}
+        />
+        <BottomTab.Screen
+          name="Profile"
+          component={ProfileNavigator}
+          options={{
+            tabBarButton: (props) => (
+              <TabComponent label="profile" {...props} />
+            ),
+          }}
+        />
       </BottomTab.Navigator>
-      </SafeAreaProvider>
+    </SafeAreaProvider>
   );
 }
 
 // You can explore the built-in icon families and icons on the web at:
 // https://icons.expo.fyi/
-function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']; color: string }) {
+function TabBarIcon(props: {
+  name: React.ComponentProps<typeof Ionicons>["name"];
+  color: string;
+}) {
   return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
 }
 
@@ -122,8 +126,8 @@ function HomeNavigator() {
         name="HomeScreen"
         component={HomeScreen}
         options={{
-          headerTitle: 'Home Screen',
-          headerShown: false
+          headerTitle: "Home Screen",
+          headerShown: false,
         }}
       />
     </HomeStack.Navigator>
@@ -139,8 +143,8 @@ function ProfileNavigator() {
         name="ProfileScreen"
         component={ProfileScreen}
         options={{
-          headerTitle: 'Profile Screen',
-          headerShown: false
+          headerTitle: "Profile Screen",
+          headerShown: false,
         }}
       />
     </ProfileStack.Navigator>

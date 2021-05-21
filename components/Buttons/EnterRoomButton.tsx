@@ -2,8 +2,10 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import { Button } from 'react-native-paper';
 import { MaterialIcons } from '@expo/vector-icons';
-
+import Layout from '../../constants/Layout';
+const { window: { height, width }, isSmallDevice } = Layout
 const EnterRoomButton = ({onPress, text, sending = false}) => {
+  console.log({ height, width, isSmallDevice })
   return (
     <View style={styles.btnView}>
       <Button
@@ -25,10 +27,10 @@ export default EnterRoomButton;
 const styles = StyleSheet.create({
   btnView: {
     flex: 1,
-    marginBottom: 20,
+    marginBottom: height * 0.024,
     justifyContent: 'flex-end',
     alignSelf: 'stretch',
-    marginHorizontal: 50,
+    marginHorizontal: width * 0.1273,
   },
   btn: {
     borderRadius: 30,
@@ -36,12 +38,12 @@ const styles = StyleSheet.create({
     borderColor: '#FF9E01',
   },
   labelStyle: {
-    fontSize: 18,
-    paddingVertical: 4,
+    fontSize: height * 0.022,
+    paddingVertical: height *  0.005,
     justifyContent: 'center',
     alignItems: 'center',
     fontWeight: 'bold',
     textTransform: 'capitalize',
-    minHeight: 24,
+    minHeight: height * 0.03,
   },
 });

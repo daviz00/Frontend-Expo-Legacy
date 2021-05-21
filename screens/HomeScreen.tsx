@@ -1,26 +1,19 @@
-import React, {useEffect, useState} from 'react';
-import {StyleSheet, SafeAreaView} from 'react-native';
-import {Title} from 'react-native-paper';
-import SingleRoomCard from '../components/SingleRoom/SingleRoomCard';
+import React, { useEffect, useState } from "react";
+import { StyleSheet, SafeAreaView } from "react-native";
+import { Title } from "react-native-paper";
+import SingleRoomCard from "../components/SingleRoom/SingleRoomCard";
 import SwipeCards from "react-native-swipe-cards-deck";
 
 function Card() {
-  return (
-    <SingleRoomCard />
-  );
+  return <SingleRoomCard />;
 }
 
 export default function HomeScreen() {
-
   const [cards, setCards] = useState();
 
   // replace with real remote data fetching
   useEffect(() => {
-    setTimeout(() => {
-      setCards([
-        {}, {},
-      ]);
-    }, 5000);
+    setCards([{}, {}]);
   }, []);
 
   function handleSwipe(card) {
@@ -33,9 +26,7 @@ export default function HomeScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Title style={styles.title}>
-        All Rooms
-      </Title>
+      <Title style={styles.title}>All Rooms</Title>
       <SwipeCards
         cards={cards}
         renderCard={(cardData) => <Card data={cardData} />}
@@ -52,7 +43,7 @@ export default function HomeScreen() {
         stack={false}
         stackOffsetX={0}
         stackOffsetY={0}
-        />
+      />
     </SafeAreaView>
   );
 }
@@ -62,15 +53,15 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 60,
     paddingHorizontal: 30,
-    alignItems: 'center',
-    backgroundColor: '#13120E',
+    alignItems: "center",
+    backgroundColor: "#13120E",
   },
 
   title: {
     fontSize: 28,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginRight: 195,
     marginBottom: -80,
-    color: '#FFFFFF'
+    color: "#FFFFFF",
   },
 });

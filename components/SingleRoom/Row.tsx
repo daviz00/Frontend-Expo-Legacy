@@ -1,5 +1,7 @@
 import React from 'react';
 import {StyleSheet, Image, View} from 'react-native';
+import Layout from '../../constants/Layout';
+const { window: { height, width }, isSmallDevice } = Layout
 
 const Row = () => {
   return (
@@ -40,9 +42,9 @@ export default Row;
 
 const styles = StyleSheet.create({
   imageCommon: {
-    width: 70,
-    height: 70,
+    width: width * 0.178,
+    height: height * 0.086,
     borderRadius: 50,
-    marginHorizontal: 5,
+    marginHorizontal: width * 0.012,
   },
 });
