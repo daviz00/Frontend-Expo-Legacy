@@ -51,9 +51,7 @@ const styles = StyleSheet.create({
     fontStyle: "normal",
     fontWeight: "bold",
     fontSize: 22,
-    // lineHeight: '180.52%',
     textAlign: "center",
-    // letterSpacing: '0.035em',
     color: "#FFFFFF",
   },
   button: {
@@ -64,14 +62,14 @@ const styles = StyleSheet.create({
   buttonClose: {
     backgroundColor: "#2196F3",
     height: Dimensions.get("screen").height / 19.31,
-    paddingHorizontal: 12,
+    paddingHorizontal:Dimensions.get("screen").width / 32.75,
     // width: Dimensions.get('screen').width / 3.02,
   },
   input: {
-    width: 200,
+    width: Dimensions.get("screen").width / 1.965 ,
     padding: 10,
-    marginTop: 20,
-    marginBottom: 10,
+    marginTop: Dimensions.get("screen").height / 40.3,
+    marginBottom: Dimensions.get("screen").height / 80.6,
     backgroundColor: "#fff",
     borderBottomWidth: 1.5,
   },

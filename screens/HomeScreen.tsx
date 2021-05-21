@@ -3,6 +3,8 @@ import { StyleSheet, SafeAreaView } from "react-native";
 import { Title } from "react-native-paper";
 import SingleRoomCard from "../components/SingleRoom/SingleRoomCard";
 import SwipeCards from "react-native-swipe-cards-deck";
+import Layout from "../constants/Layout";
+const {window: { height, width }, isSmallDevice} = Layout
 
 function Card() {
   return <SingleRoomCard />;
@@ -51,17 +53,17 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 60,
-    paddingHorizontal: 30,
+    paddingTop: height * 0.074,
+    paddingHorizontal: width * 0.07,
     alignItems: "center",
     backgroundColor: "#13120E",
   },
 
   title: {
-    fontSize: 28,
+    fontSize: height * 0.034,
     fontWeight: "bold",
-    marginRight: 195,
-    marginBottom: -80,
+    marginRight: width * 0.4975,
+    marginBottom: -(height * 0.099),
     color: "#FFFFFF",
   },
 });
