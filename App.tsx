@@ -18,8 +18,8 @@ export default function App() {
     return (
       <PaperProvider>
         <SafeAreaProvider>
-          {/* <Navigation colorScheme={colorScheme} /> */}
-          <AuthScreen />
+          <Navigation colorScheme={colorScheme} />
+          {/* <AuthScreen /> */}
           <StatusBar style="light" />
         </SafeAreaProvider>
       </PaperProvider>

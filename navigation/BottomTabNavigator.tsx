@@ -29,7 +29,6 @@ const AddRoomButton = ({ children, onPress }) => {
     }}
   >
     <LinearGradient
-      // colors={['#d00000', '#3a0ca3']}
       colors={["#FF9905", "#FB5D36"]}
       style={{
         width: 60,

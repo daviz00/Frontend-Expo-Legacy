@@ -12,9 +12,9 @@ const NextButton = ({onPress, text, sending = false}) => {
   return (
     <View style={styles.btnView}>
       <Button
-      icon='google'
+        icon='google'
         mode="contained"
-        color="#71A1FF"
+        color="#FF9E01"
         onPress={onPress}
         labelStyle={styles.labelStyle}
         disabled={sending}
@@ -42,9 +42,11 @@ const styles = StyleSheet.create({
     paddingVertical: 7,
     justifyContent: 'center',
     alignItems: 'center',
-    color: 'white',
-    textTransform: 'capitalize',
+    color: '#000',
+    fontWeight: 'bold',
+    textTransform: 'none',
     minHeight: 24,
   },
+
 });
 export default NextButton;

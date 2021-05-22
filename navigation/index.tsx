@@ -26,10 +26,10 @@ const Stack = createStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='Auth'>
+    <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='Root'>
       <Stack.Screen name="Root" component={BottomTabNavigator} />
       <Stack.Screen name="Auth" component={AuthNavigator} />
-      
+
     </Stack.Navigator>
   );
 }
