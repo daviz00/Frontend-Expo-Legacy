@@ -90,6 +90,19 @@ export default function ProfileScreen() {
             International Relations minor
             {"\n"}
             📚Speaking 5 languages
+            Software Engineer 👩‍💻 @Verse | Globe trotter 🌎| Community Enthusiast
+            | Breathing resilience, empowerment for social impact ✨| Swimmer 🏊
+            | Listener & Learner ⚒️
+            {"\n"}
+            🌟 Lived in 5 countries 🇩🇪🇬🇧🇨🇦🇪🇸🇫🇷
+            {"\n"}
+            🧠 Fascinated by neuroscience, psychology, behavioural, cognitive &
+            social sciences
+            {"\n"}
+            Diving into Tech - Majored in Computer Science, Data Science and
+            International Relations minor
+            {"\n"}
+            📚Speaking 5 languages
           </Text>
         </View>
       </ScrollView>

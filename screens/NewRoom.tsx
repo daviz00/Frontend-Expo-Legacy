@@ -20,13 +20,16 @@ export default function Example() {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor: "#13120E",
       }}
     >
       <Home />
       <RBSheet
         ref={refRBSheet}
+        animationType='slide'
+        keyboardAvoidingViewEnabled={false}
         closeOnDragDown={true}
-        closeOnPressMask={false}
+        closeOnPressMask={true}
         customStyles={{
           wrapper: {
             backgroundColor: "transparent",

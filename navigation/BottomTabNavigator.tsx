@@ -2,7 +2,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 import * as React from "react";
-import { View, StyleSheet, Image, Pressable, Vibration } from "react-native";
+import { View, StyleSheet, Image, TouchableOpacity, Vibration } from "react-native";
 
 import { LinearGradient } from "expo-linear-gradient";
 import Colors from "../constants/Colors";
@@ -20,7 +20,7 @@ const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 const AddRoomButton = ({ children, onPress }) => {
   const navigation = useNavigation()
   return(
-  <Pressable
+  <TouchableOpacity
     onPress={() => navigation.navigate('Room')}
     style={{
       top: -30,
@@ -43,7 +43,7 @@ const AddRoomButton = ({ children, onPress }) => {
     >
       {children}
     </LinearGradient>
-  </Pressable>
+  </TouchableOpacity>
 )};
 
 export default function BottomTabNavigator() {

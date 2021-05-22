@@ -1,24 +1,29 @@
-import * as Linking from 'expo-linking';
+import * as Linking from "expo-linking";
 
 export default {
-  prefixes: [Linking.makeUrl('/')],
+  prefixes: [Linking.makeUrl("/")],
   config: {
     screens: {
       Root: {
         screens: {
           Home: {
             screens: {
-              HomeScreen: 'one',
+              HomeScreen: "one",
             },
           },
           Profile: {
             screens: {
-              ProfileScreen: 'two',
+              ProfileScreen: "two",
             },
           },
         },
       },
-      NotFound: '*',
+      Auth: {
+        screens: {
+          AuthWelcome: "AuthWelcome",
+        },
+      },
+      NotFound: "*",
     },
   },
 };

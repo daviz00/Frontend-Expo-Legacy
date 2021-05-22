@@ -12,6 +12,7 @@ const NextButton = ({onPress, text, sending = false}) => {
   return (
     <View style={styles.btnView}>
       <Button
+      icon='google'
         mode="contained"
         color="#71A1FF"
         onPress={onPress}
@@ -28,7 +29,7 @@ const NextButton = ({onPress, text, sending = false}) => {
 const styles = StyleSheet.create({
   btnView: {
     flex: 1,
-    marginBottom: 60,
+    marginBottom: 80,
     justifyContent: 'flex-end',
     alignSelf: 'stretch',
     marginHorizontal: 30,

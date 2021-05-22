@@ -25,7 +25,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#3C3C3C"
-      }
+      },
+      "package": "com.manan0507.VerseExpo"
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
